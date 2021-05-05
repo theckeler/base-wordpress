@@ -40,7 +40,7 @@ global $post;
             </div>
             <div class="logo"><a href="/"><img src="<? echo get_bloginfo('stylesheet_directory'); ?>/_images/logo.svg"></a></div>
             <nav class="navigation" role="navigation" aria-label="Main">
-                <?php wp_nav_menu(array('container' => false, 'menu' => 'footer', 'menu_class' => '', 'container' => 'ul',)); ?>
+                <?php wp_nav_menu(array('container' => false, 'menu' => 'main', 'menu_class' => '', 'container' => 'ul',)); ?>
             </nav>
         </div>
     </header>

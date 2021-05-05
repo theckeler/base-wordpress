@@ -1,11 +1,3 @@
-/*
-Theme Name: NAS Recruitment - {Ace of} Base
-Theme URI: 
-Description: 
-Version: v1.0
-Author: NAS Recruitment
-Author URI: http://nasrecruitment.com
-*/
 html,
 body,
 div,
@@ -99,6 +91,10 @@ html,
 body {
   padding: 0;
   margin: 0;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #fff;
 }
 
 *,
@@ -115,6 +111,13 @@ ul[class],
   margin: 0;
 }
 
+a {
+  color: #147EFB;
+}
+a:visited, a:active {
+  color: #147EFB;
+}
+
 .wrapper {
   max-width: 1400px;
   margin-left: auto;
@@ -125,6 +128,19 @@ ul[class],
 
 .page {
   min-height: 80vh;
+}
+.page strong {
+  font-weight: 700;
+}
+.page p {
+  margin-bottom: 20px;
+}
+.page p:last-of-type {
+  margin-bottom: 0;
+}
+.page img {
+  max-width: 100%;
+  height: auto;
 }
 
 .social {
@@ -157,6 +173,13 @@ ul[class],
   height: 40px;
 }
 
+.header,
+.footer {
+  background: -webkit-gradient(linear, left top, right top, from(#f7fbfc), color-stop(75%, #d9edf2), to(#d6f6ff));
+  background: linear-gradient(to right, #f7fbfc 0%, #d9edf2 75%, #d6f6ff 100%);
+  padding: 10px 0;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -164,7 +187,7 @@ ul[class],
   left: 0;
   width: 100%;
   z-index: 3001;
-  background: #fff;
+  border-bottom: 2px solid #c3c2c3;
 }
 .header .wrapper {
   display: -webkit-box;
@@ -179,6 +202,7 @@ ul[class],
   padding-right: 10px;
 }
 .header .hamburger {
+  margin-left: auto;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -249,11 +273,18 @@ ul[class],
 .header nav > ul > li:last-of-type {
   margin-right: 0;
 }
-.header nav > ul > li a {
+.header nav > ul > li a,
+.header nav > ul > li span {
   display: block;
   padding: 6px 20px;
   color: #000;
   text-decoration: none;
+  border-radius: 4px;
+}
+.header nav > ul > li span {
+  cursor: default;
+  background: #147EFB;
+  color: #fff;
 }
 .header nav > ul > li .sub-nav {
   display: none;
@@ -272,6 +303,11 @@ ul[class],
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: 300px;
+}
+
+.footer {
+  border-top: 2px solid #c3c2c3;
+  padding-bottom: 60px;
 }
 
 .desktop {
@@ -345,6 +381,104 @@ section.single .rows .row-2 {
   border-left: 1px solid #cdcdcd;
 }
 
+.loading {
+  position: relative;
+}
+.loading:before, .loading:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-animation-name: rotate360;
+          animation-name: rotate360;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+.loading:before {
+  width: 40px;
+  height: 40px;
+  border: 6px solid #333;
+  border-radius: 50%;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  border-top-color: transparent;
+}
+.loading:after {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  border-bottom-color: transparent;
+}
+.loading.full-screen {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+}
+
+@-webkit-keyframes rotate360 {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate360 {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.page {
+  padding: 40px 0;
+}
+.page h1 {
+  margin-bottom: 20px;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.posts .post a {
+  display: block;
+  padding: 10px;
+  border: 1px solid #147EFB;
+  border-radius: 4px;
+  color: #333;
+  background: #f9f9f9;
+  text-decoration: none;
+}
+.posts .post a > * {
+  display: block;
+  width: 100%;
+  padding-bottom: 14px;
+}
+.posts .post a > *:nth-last-child(1) {
+  padding-bottom: 0;
+}
+
 /* START BUILD */
 @media (max-width: 1024px) {
   .header {
@@ -373,68 +507,29 @@ section.single .rows .row-2 {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  .header nav .nav-main {
-    width: 100%;
-    margin: auto;
+  .header nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 0;
-  }
-  .header nav .nav-main li,
-.header nav .nav-main li.dropdown-link,
-.header nav .nav-main li.buttons {
-    width: 100%;
-    display: block;
-    text-align: left;
-  }
-  .header nav .nav-main li a,
-.header nav .nav-main li.dropdown-link a,
-.header nav .nav-main li.buttons a {
-    color: #000;
-    background: transparent;
-    text-align: left;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  .header nav .nav-main li .dropdown,
-.header nav .nav-main li.dropdown-link .dropdown,
-.header nav .nav-main li.buttons .dropdown {
-    display: block;
-    position: relative;
-    top: initial;
-    margin-bottom: 6px;
-    padding: 0;
-    background: transparent;
-    left: initial;
-  }
-  .header nav .nav-main li .dropdown:before,
-.header nav .nav-main li.dropdown-link .dropdown:before,
-.header nav .nav-main li.buttons .dropdown:before {
-    content: none;
-  }
-  .header nav .nav-main li .dropdown ul,
-.header nav .nav-main li.dropdown-link .dropdown ul,
-.header nav .nav-main li.buttons .dropdown ul {
-    background: transparent;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    padding-left: 0;
-  }
-  .header nav .nav-main li .dropdown ul li a,
-.header nav .nav-main li.dropdown-link .dropdown ul li a,
-.header nav .nav-main li.buttons .dropdown ul li a {
-    color: #000;
-  }
-  .header nav .nav-main > li > a {
-    padding: 20px;
   }
   .header .hamburger {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-right: 10px;
+  }
+}
+@media only screen and (hover: hover) and (min-width: 1024px) {
+  .header nav > ul > li a,
+.posts .post a {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .header nav > ul > li a:hover,
+.posts .post a:hover {
+    cursor: pointer;
+    background: #333;
+    color: #fff;
   }
 }
