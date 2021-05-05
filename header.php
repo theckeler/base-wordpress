@@ -6,23 +6,15 @@ global $post;
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <title><?php wp_title(''); ?></title>
-    <meta name="title" content="<?php wp_title(' '); ?>" />
-    <meta name="robots" content="index,follow" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="document-class" content="Completed" />
-    <meta name="document-rights" content="Copyrighted Work" />
-    <meta name="document-type" content="Public" />
-    <meta name="document-rating" content="General" />
-    <meta name="document-distribution" content="Global" />
-    <meta name="document-state" content="Static" />
-    <meta name="cache-control" content="Public" />
-    <meta http-equiv="Content-Language" content="EN-US" />
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-
+    <title><?php wp_title(''); ?> › (Ace of) Base</title>
+    <meta name="description" content="" />
+    <meta property="og:type" content="website" />
+    <meta name="og:title" property="og:title" content="<?php wp_title(''); ?> › (Ace of) Base" />
+    <meta name="og:description" property="og:description" content="" />
+    <meta property="og:site_name" content="Consume:Design" />
+    <meta property="og:url" content="https:consumedesign.com" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" href="<? echo get_bloginfo('stylesheet_directory'); ?>/favicon.ico" />
 
     <?php wp_head(); ?>
